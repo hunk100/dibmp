@@ -1,0 +1,11 @@
+cn\mldn\dibmp\web\action\back\StorageAuditActionBack.class
+cn\mldn\dibmp\web\action\back\StorageActionBack.class
+cn\mldn\dibmp\web\action\PageActionFront.class
+cn\mldn\dibmp\web\action\back\DistributionActionBack.class
+cn\mldn\dibmp\web\realm\cre\DefaultCredentialsMatcher.class
+cn\mldn\dibmp\web\realm\MemberRealm.class
+cn\mldn\dibmp\web\rand\DefaultFormAuthenticationFilter.class
+cn\mldn\dibmp\web\action\back\WarehouseActionBack.class
+cn\mldn\dibmp\web\action\back\ManageActionBack.class
+cn\mldn\dibmp\web\action\back\CustomerActionBack.class
+cn\mldn\dibmp\web\action\back\GoodsActionBack.class

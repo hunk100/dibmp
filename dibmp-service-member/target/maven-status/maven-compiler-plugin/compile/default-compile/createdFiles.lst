@@ -1,0 +1,5 @@
+cn\mldn\dibmp\dao\IMemberDAO.class
+cn\mldn\dibmp\service\impl\MemberServiceImpl.class
+cn\mldn\dibmp\dao\IRoleDAO.class
+cn\mldn\dibmp\service\main\ProviderStartupMemberService.class
+cn\mldn\dibmp\dao\IActionDAO.class
