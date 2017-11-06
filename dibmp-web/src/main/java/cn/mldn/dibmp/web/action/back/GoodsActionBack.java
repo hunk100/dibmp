@@ -1,5 +1,6 @@
 package cn.mldn.dibmp.web.action.back;
 
+import org.apache.shiro.SecurityUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,6 +15,8 @@ public class GoodsActionBack extends AbstractAction {
 	@RequestMapping("add_pre")
 	public ModelAndView addPre() {
 		ModelAndView mav = new ModelAndView(super.getPage("goods.add.page"));
+		 String mid = (String) SecurityUtils.getSubject().getSession().getAttribute("mid");
+		 System.out.println(mid + "1111" );
 		return mav;
 	}
 	@RequestMapping("add")

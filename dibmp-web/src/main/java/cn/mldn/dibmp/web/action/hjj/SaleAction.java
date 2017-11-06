@@ -1,10 +1,14 @@
 package cn.mldn.dibmp.web.action.hjj;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
+import org.apache.shiro.SecurityUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import cn.mldn.dibmp.service.ISaleService;
 import cn.mldn.util.action.abs.AbstractAction;
@@ -17,8 +21,10 @@ public class SaleAction extends AbstractAction{
 	
 	@ResponseBody
 	@RequestMapping("preDelivery")
-	public Object preDelivery(String mid,Long gid) {
-		boolean flag = saleService.preDelivery(mid, gid);
-		return flag;
+	public Object preDelivery(Long gid) {
+		 String mid = (String) SecurityUtils.getSubject().getSession().getAttribute("mid");
+		 System.err.println(mid);
+		 boolean flag = saleService.preDelivery(mid, gid);
+		 return flag;
 	}
 }

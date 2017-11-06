@@ -166,4 +166,47 @@
 			<artifactId>spring-beans</artifactId>
 		</dependency>
 	</dependencies>
+		<build>
+		<finalName>dibmp-service-member</finalName>
+		<resources>
+			<resource>
+				<!-- 此处的属性是profile中统一定义的路径的名称，不同的配置文件有不同的子目录 -->
+				<directory>${profile.dir}</directory>
+				<filtering>false</filtering>
+			</resource>
+			<resource>
+				<directory>${resources.dir}</directory>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptor>src/main/assembly/assembly.xml</descriptor><!--描述文件路径 -->
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase><!-- 绑定到package生命周期阶段上 -->
+						<goals>
+							<goal>single</goal><!-- 只运行一次 -->
+						</goals>
+					</execution> 
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<!-- <version>${maven.jar.plugin.version}</version> -->
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<excludes>
+						<exclude>config/</exclude>
+						<exclude>META-INF/</exclude> 
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

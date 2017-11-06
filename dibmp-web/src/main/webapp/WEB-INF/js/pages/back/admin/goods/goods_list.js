@@ -6,7 +6,7 @@ $(function(){
 			
 			$.ajax({
 				type:"POST",
-				url:"pages/back/admin/goods/preDelivery",
+				url:"pages/back/admin/goods/preDelivery.action",
 				data:{mid:mid,gid:gid},
 				dataType:"json",
 				success:function(data) {
