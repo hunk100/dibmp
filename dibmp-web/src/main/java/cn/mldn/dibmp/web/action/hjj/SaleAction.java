@@ -13,7 +13,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import cn.mldn.dibmp.service.ISaleService;
 import cn.mldn.util.action.abs.AbstractAction;
 @Controller
-@RequestMapping("/pages/back/admin/goods/")
+@RequestMapping("/pages/back/admin/goods/*")
 public class SaleAction extends AbstractAction{
 	private static final String TITLE = "商品" ;
 	@Resource
