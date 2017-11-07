@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 public abstract class AbstractAction {
 	@Resource
 	protected MessageSource messageSource ;
+	
 	/**
 	 * 拆分后转为Set集合
 	 * @param str

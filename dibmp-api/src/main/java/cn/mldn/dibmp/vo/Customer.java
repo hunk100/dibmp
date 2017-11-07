@@ -11,7 +11,7 @@ public class Customer implements Serializable{
 	private Long pid;
 	private Long cid;
 	private String address;
-	private Date dateTime;
+	private Date indate;
 	private Integer connum;
 	private Long ciid;
 	private Long csid;
@@ -53,11 +53,11 @@ public class Customer implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Date getDateTime() {
-		return dateTime;
+	public Date getindate() {
+		return indate;
 	}
-	public void setDateTime(Date dateTime) {
-		this.dateTime = dateTime;
+	public void setindate(Date indate) {
+		this.indate = indate;
 	}
 	public Integer getConnum() {
 		return connum;
@@ -92,7 +92,7 @@ public class Customer implements Serializable{
 	@Override
 	public String toString() {
 		return "Customer [cuid=" + cuid + ", name=" + name + ", phone=" + phone + ", pid=" + pid + ", cid=" + cid
-				+ ", address=" + address + ", dateTime=" + dateTime + ", connum=" + connum + ", ciid=" + ciid
+				+ ", address=" + address + ", indate=" + indate + ", connum=" + connum + ", ciid=" + ciid
 				+ ", csid=" + csid + ", note=" + note + ", recorder=" + recorder + "]";
 	}
 	
