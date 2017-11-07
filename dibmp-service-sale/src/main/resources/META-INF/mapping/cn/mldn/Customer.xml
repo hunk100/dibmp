@@ -2,10 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.mldn.dibmp.dao.ICustomerDAO">
-	<select id="getAll" resultType="Customer">
+	<select id="listAll" resultType="Customer">
 		SELECT cuid,name,phone,pid,cid,address,indate,connum,ciid,csid,note,recorder FROM customer ; 
 	</select>
 
+	<select id="findBySplit" parameterType="map" resultType="Customer">
+		SELECT cuid,name,phone,pid,cid,address,indate,connum,ciid,csid,note,recorder FROM customer 
+		<where>
+			<if test="column != null and column !='' and keyWord != null and keyWord != '' ">
+				${column} LIKE #{keyWord}
+			</if>
+		</where>
+		LIMIT #{currentPage},#{lineSize}
+	</select>
 </mapper>
 
 
